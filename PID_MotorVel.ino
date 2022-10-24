@@ -136,7 +136,7 @@ void PID_Routine()
 // Calculate errors
   error = Setpoint_Velocity - VelocityFiltered;
   // To overcome integral windup  
-  if(PID_output< maxRPM)
+  if(PID_output<= maxRPM)
     error_Int = error_Int + (error * deltaT);
   error_Der = (error - error_prev) / deltaT ; 
   
