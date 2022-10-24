@@ -15,7 +15,7 @@
 
 // PID Tuning based in Ziegler and Nicholas Method (Z-N)        // (C-C)
 #define Kp          0.8                                         // 0.3522
-#define KI          0.638                                       // 0.2317
+#define Ki          0.638                                       // 0.2317
 #define Kd          0.2508                                      // 0.0798
 //________________________________________________________________________________________________________________________________________//
 
@@ -141,7 +141,7 @@ void PID_Routine()
   error_Der = (error - error_prev) / deltaT ; 
   
 // perform PID Calculations
-  PID_output = (Kp*error) + (KI*error_Int) + (Kd*error_Der);  
+  PID_output = (Kp*error) + (Ki*error_Int) + (Kd*error_Der);  
 
   Control_Motor();       
        
